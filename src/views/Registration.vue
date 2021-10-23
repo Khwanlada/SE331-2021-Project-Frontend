@@ -33,6 +33,12 @@
             <Field name="password" type="password" class="form-control" />
             <ErrorMessage name="password" class="error-feedback" />
           </div>
+        <div class="form-group">
+            <label for="age">Age</label>
+            <Field name="age" type="text" class="form-control" />
+            <ErrorMessage name="age" class="error-feedback" />
+          </div>
+
 
           <div class="form-group">
             <button class="btn btn-primary btn-block" :disabled="loading">
