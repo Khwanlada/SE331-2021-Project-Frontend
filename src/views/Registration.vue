@@ -38,6 +38,11 @@
             <Field name="age" type="text" class="form-control" />
             <ErrorMessage name="age" class="error-feedback" />
           </div>
+        <div class="form-group">
+            <label for="hometown">Homwtown</label>
+            <Field name="hometown" type="text" class="form-control" />
+            <ErrorMessage name="hometown" class="error-feedback" />
+          </div>
 
 
           <div class="form-group">
