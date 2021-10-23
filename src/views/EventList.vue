@@ -1,5 +1,5 @@
 <template>
-  <h1>Events For Good</h1>
+  <h1>List of people who has vaccinated</h1>
 
   <div class="events">
     <div class="search-box">
