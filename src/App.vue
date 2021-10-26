@@ -104,9 +104,9 @@ export default {
   animation-duration: 3s;
 }
 #app {
-  /* position: fixed;
+  position: fixed;
     width: 100%;
-    height: 100%; */
+    height: 100%;
   font-family: monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
