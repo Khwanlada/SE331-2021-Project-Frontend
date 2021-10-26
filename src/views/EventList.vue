@@ -6,14 +6,6 @@
     <div class="row justify-content-center">
 
   <div class="events">
-    <div class="search-box">
-      <BaseInput
-        v-model="keyword"
-        type="text"
-        label="Search..."
-        @input="updateKeyword"
-      />
-    </div>
 
     <EventCard v-for="event in events" :key="event.id" :event="event" />
     <div class="pagination">

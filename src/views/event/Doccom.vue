@@ -31,20 +31,8 @@
           <div class="review-container">
             <h3 class="doc">꒰ ❛ Comment ❜ ꒱</h3>
             <p class="doc">{{ keepTwo }}</p>
+            <br>
           </div>
-          <!-- <form @submit.prevent="addSuggest(1)">
-            <input
-              type="text"
-              placeholder="Suggest for 1st dose"
-              v-model="suggest1"
-              required
-            />
-            <button class="btn btn-dark btn-sm ml-1">Add</button>
-          </form>
-          <br>
-          <p class="font-weight-bold p-1 d-inline rounded" id="title">
-            Suggestion from doctor:
-          </p> -->
         </div>
       </div>
     </div>

@@ -8,7 +8,12 @@
 
         <ul class="nav justify-content-center">
           <li><a href="/home" class="nav-link px-2 text-white" style="font-family:STIX Two Text;">‎ꔛ Home⠀⠀| </a></li>
-          <li><a href="/about" class="nav-link px-2 text-white" style="margin-left; font-family:STIX Two Text;">About us ‎ꔛ</a></li>⠀⠀⠀⠀⠀⠀⠀⠀⠀
+          <li><a href="/about" class="nav-link px-2 text-white" style="margin-left; font-family:STIX Two Text;">About us ‎ꔛ</a></li>⠀⠀⠀
+          <span v-if="isAdmin || isDoctor"> |
+          <router-link :to="{ name: 'Doccom' }" class="btn" id="button" style="color:white">
+         Doctor's comment
+      </router-link>
+       </span>⠀⠀⠀⠀⠀⠀
           <!-- <li><a href="#" class="nav-link px-2 text-white">Pricing</a></li>
           <li><a href="#" class="nav-link px-2 text-white">FAQs</a></li>
           <li><a href="#" class="nav-link px-2 text-white">About</a></li> -->
@@ -42,6 +47,7 @@
         </li>
       </ul>
     </nav>
+
         </div>
       </div>
     </div>
@@ -74,11 +80,11 @@ export default {
     currentUser() {
       return localStorage.getItem('user')
     },
-    currentDoctor() {
-      return localStorage.getItem('ROLE_DOCTOR')
-    },
     isAdmin() {
       return AuthService.hasRoles('ROLE_ADMIN')
+    },
+    isDoctor() {
+      return AuthService.hasRoles('ROLE_DOCTOR')
     }
     },
   methods: {
