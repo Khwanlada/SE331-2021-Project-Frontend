@@ -1,29 +1,34 @@
 <template>
-  <p>Regstration form here</p>
-  <button @click="register">Register Me</button>
+  <div class="row justify-content-center mt-md-3 mt-sm-2">
+    <div class="col-md-8 col-sm-12 p-4 mt-3" id="content">
+      <h3>❝ {{ event.name }}  {{ event.surname }} ❞</h3>
+      <div class="container mt-5">
+        <p>
+          <strong id="title">Hometown:</strong>{{ event.hometown }}
+        </p>
+      </div>
+    </div>
+  </div>
 </template>
-
 <script>
 export default {
   props: ['event'],
-  inject: ['GStore'], // <---- Inject the Global Store
-  methods: {
-    register() {
-      // Assuming successful API call to register them
-      this.GStore.flashMessage =
-        'You are successfully registered for ' + this.event.title
-      setTimeout(() => {
-        // After 3 seconds remove it
-        this.GStore.flashMessage = ''
-      }, 3000)
-      // Set a flash message to appear on the next page loaded which says
-      // 'You are successfully registered for ' + this.event.title
-
-      this.$router.push({
-        name: 'EventDetails',
-        params: { id: this.event.id }
-      })
-    }
-  }
-}
+  inject: ['GStore'],
+};
 </script>
+
+<style scoped>
+#content {
+  border: 1px solid #4d3e00;
+  border-radius: 50px;
+  background-color: #ffd900;
+  margin-top: 15px;
+  color: rgb(95, 87, 16);
+}
+#title {
+
+  margin-right: 5px;
+  border-radius: 2px;
+  padding-left: 5px;
+}
+</style>
