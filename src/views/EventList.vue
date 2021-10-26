@@ -1,5 +1,9 @@
 <template>
-  <h1>List of people who has vaccinated</h1>
+
+  <div class="home">
+    <img class="img-fluid" src="../assets/logo.png" width="400" height="400" />
+    <h2 style="color:#343A40;font-family:STIX Two Text" >List of Vaccinated</h2>
+    <div class="row justify-content-center">
 
   <div class="events">
     <div class="search-box">
@@ -14,6 +18,7 @@
     <EventCard v-for="event in events" :key="event.id" :event="event" />
     <div class="pagination">
       <router-link
+        class="page-link; list-group-item list-group-item-action list-group-item-warning"
         id="page-prev"
         :to="{ name: 'EventList', query: { page: page - 1 } }"
         rel="prev"
@@ -23,6 +28,7 @@
       >
 
       <router-link
+      class="page-link; list-group-item list-group-item-action list-group-item-warning"
         id="page-next"
         :to="{ name: 'EventList', query: { page: page + 1 } }"
         rel="next"
@@ -30,6 +36,8 @@
       >
         Next Page</router-link
       >
+    </div>
+  </div>
     </div>
   </div>
 </template>
