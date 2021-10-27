@@ -45,6 +45,30 @@ const routes = [
     name: "Start",
     component: Start,
   },
+  //Doccom
+  {
+    path: "/doccom",
+    name: "Doccom",
+    // props: true,
+    component: Doccom,
+    beforeEnter: () => {
+      return OrganizerService.getOrganizers()
+        .then((response) => {
+          GStore.organizers = response.data
+        })
+        .catch(() => {
+          GStore.organizers = null
+          console.log('cannot load organizer')
+        })
+    }
+    // beforeEnter:(to) => {
+    //   if(GlobalState.currentUser.authorities[0] != "ROLE_ADMIN"){
+    //     return {
+    //       name: 'EventDetails'
+    //     }
+    //   }
+    // }
+  },
   // หน้าโผล่
   {
     path: '/add-event',
@@ -104,30 +128,30 @@ const routes = [
         props: true,
         component: EventEdit
       },
-      //Doccom
-      {
-        path: "/doccom",
-        name: "Doccom",
-        // props: true,
-        component: Doccom,
-        beforeEnter: () => {
-          return OrganizerService.getOrganizers()
-            .then((response) => {
-              GStore.organizers = response.data
-            })
-            .catch(() => {
-              GStore.organizers = null
-              console.log('cannot load organizer')
-            })
-        }
-        // beforeEnter:(to) => {
-        //   if(GlobalState.currentUser.authorities[0] != "ROLE_ADMIN"){
-        //     return {
-        //       name: 'EventDetails'
-        //     }
-        //   }
-        // }
-      },
+      // //Doccom
+      // {
+      //   path: "/doccom",
+      //   name: "Doccom",
+      //   // props: true,
+      //   component: Doccom,
+      //   beforeEnter: () => {
+      //     return OrganizerService.getOrganizers()
+      //       .then((response) => {
+      //         GStore.organizers = response.data
+      //       })
+      //       .catch(() => {
+      //         GStore.organizers = null
+      //         console.log('cannot load organizer')
+      //       })
+      //   }
+      //   // beforeEnter:(to) => {
+      //   //   if(GlobalState.currentUser.authorities[0] != "ROLE_ADMIN"){
+      //   //     return {
+      //   //       name: 'EventDetails'
+      //   //     }
+      //   //   }
+      //   // }
+      // },
     ]
   },
   {

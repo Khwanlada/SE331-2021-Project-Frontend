@@ -11,11 +11,11 @@
       <router-link :to="{ name: 'EventEdit' }" class="btn" id="button">
         ꒰ Status ꒱
       </router-link>
-      <!-- <span v-if="isAdmin"> -->
+      <!-- <span v-if="isAdmin">
       <router-link :to="{ name: 'Doccom' }" class="btn" id="button">
         ꒰ Doctor's comment ꒱
       </router-link>
-       <!-- </span> -->
+       </span> -->
   </div>
     <router-view :event="GStore.event" />
   <!-- </div> -->

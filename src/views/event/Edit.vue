@@ -28,9 +28,9 @@
 
 
           <br>
-          <!-- <span v-if="isAdmin"> -->
+          <span v-if="isAdmin || isDoctor">
             <button @click="Dcomment" class="btn btn-dark"> Doctor's comment </button>
-          <!-- </span> -->
+          </span>
           <br>
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
         </div>
@@ -39,18 +39,10 @@
   </div>
 </template>
 <script>
-
+import AuthService from '@/services/AuthService.js'
 export default {
   props: ['event'],
   inject: ['GStore'],
-  //add to comment
-  data() {
-    return {
-      suggest1: "",
-      suggest2: "",
-      newData: null,
-    };
-  },
   methods: {
     Dcomment(){
       this.$router.push({
@@ -63,7 +55,18 @@ export default {
       ,3000)
     },
   },
-}
+  computed: {
+    currentUser() {
+      return localStorage.getItem('user')
+    },
+    isAdmin() {
+      return AuthService.hasRoles('ROLE_ADMIN')
+    },
+    isDoctor() {
+      return AuthService.hasRoles('ROLE_DOCTOR')
+    }
+    },
+  }
 </script>
 <style scoped>
 #content {
